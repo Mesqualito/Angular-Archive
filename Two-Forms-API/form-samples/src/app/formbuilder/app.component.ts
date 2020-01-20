@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
       <div>SSN:      <input type="text" formControlName="ssn"></div>
 
       <div formGroupName="passwordsGroup">
-        <div>Password:        <input type="password" formControlName="password"></div>
+        <div>Password:         <input type="password" formControlName="password"></div>
         <div>Confirm password: <input type="password" formControlName="pconfirm"></div>
       </div>
       <button type="submit">Submit</button>
@@ -22,7 +22,7 @@ export class AppComponent {
   constructor(fb: FormBuilder) {
     this.formModel = fb.group({
       username: [''],
-      ssn: [''],
+      ssn     : [''],
       passwordsGroup: fb.group({
         password: [''],
         pconfirm: ['']

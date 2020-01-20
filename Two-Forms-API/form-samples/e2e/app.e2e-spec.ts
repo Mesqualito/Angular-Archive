@@ -1,4 +1,4 @@
-import {FormSamplesPage} from './app.po';
+import { FormSamplesPage } from './app.po';
 
 describe('form-samples App', () => {
   let page: FormSamplesPage;

@@ -1,11 +1,11 @@
-import {Component} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import { Component } from '@angular/core';
+import { FormGroup, FormControl } from "@angular/forms";
 
 @Component({
   selector: 'app-root',
   template: `
     <form [formGroup]="myFormModel">
-      <div>Product ID: <input type="text" formControlName="id"></div>
+      <div>Product ID:  <input type="text" formControlName="id"></div>
       <div>Description: <input type="text" formControlName="description"></div>
       <div>Seller:      <input type="text" formControlName="seller"></div>
     </form>
@@ -19,19 +19,20 @@ export class AppComponent {
 
   constructor() {
     this.myFormModel = new FormGroup({
-      id: new FormControl(''),
+      id         : new FormControl(''),
       description: new FormControl(''),
-      seller: new FormControl('')
+      seller     : new FormControl('')
     });
   }
 
   updateEntireForm() {
     this.myFormModel.setValue({
-      id: 123,
+      id         : 123,
       description: 'A great product',
-      seller: 'XYZ Corp'
+      seller      : 'XYZ Corp'
     });
   }
+
   updatePartOfTheForm() {
     this.myFormModel.patchValue({
       description: 'The best product'

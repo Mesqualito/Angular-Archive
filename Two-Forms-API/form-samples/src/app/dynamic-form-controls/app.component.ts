@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {FormArray, FormControl, FormGroup} from "@angular/forms";
+import { Component } from '@angular/core';
+import { FormArray, FormControl, FormGroup } from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ import {FormArray, FormControl, FormGroup} from "@angular/forms";
       <label>Emails</label>
       <button type="button" (click)="addEmail()">Add Email</button>
       <ul formArrayName="emails">
-        <li *ngFor="let e of formModel.get('emails').controls; let i=index">
+        <li *ngFor="let e of emailsFormArray.controls; let i=index">
           <input [formControlName]="i">
         </li>
       </ul>
@@ -26,12 +26,16 @@ export class AppComponent {
     ])
   });
 
+  get emailsFormArray() {
+    return this.formModel.get('emails') as FormArray;
+  }
+
   get value() {
-    return JSON.stringify(this.formModel.value, null, 4); // insert 4 spaces for readability
+    return JSON.stringify(this.formModel.value, null, 4); // indent with 4 spaces for readability
   }
 
   addEmail() {
-    const emails = this.formModel.get('emails') as FormArray;
+    const emails = this.emailsFormArray;
     emails.push(new FormControl());
   }
 
