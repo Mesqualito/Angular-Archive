@@ -3,6 +3,8 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/ng-auction/client/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/ng-auction/client/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/ng-auction/dist" />
       <excludeFolder url="file://$MODULE_DIR$/ng-auction/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/ngAuction/dist" />
